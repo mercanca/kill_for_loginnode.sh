@@ -136,7 +136,7 @@ fi
 # LOAD LIMIT PER USER
 if [ $NODELOAD -gt $LOADLIMIT_PU ]
 then
-	KILLREASON=`ps ax ouser:16,%cpu |awk '{liste[$1]+=$2} END {for (i in liste) printf "%5.1f %16s\n",liste[i],i}'|sort -nr|head -n 1|awk '(($2 != "root") && ($2 != "nslcd") && ($2 != "polkitd") && ($2 != "munge") && ($2 != "slurm") && ($2 != "libstor+") && ($2 != "dbus") && ($2 != "postfix") && ($2 != "sshd") && ($2 != "easybuild") && ($2 != "kdiri") && ($2 != "tdurak"))'`
+	KILLREASON=`ps ax ouser:16,%cpu |awk '{liste[$1]+=$2} END {for (i in liste) printf "%5.1f %16s\n",liste[i],i}'|sort -nr|head -n 1|awk '(($2 != "root") && ($2 != "nslcd") && ($2 != "polkitd") && ($2 != "munge") && ($2 != "slurm") && ($2 != "libstor+") && ($2 != "dbus") && ($2 != "postfix") && ($2 != "sshd") && ($2 != "easybuild"))'`
 	CPUPERCENT=`echo $KILLREASON |awk '{print $1}'`
 
 	if [ "$CPUPERCENT" != "" ] && [ ${CPUPERCENT//.*} -gt $LOADPERUSER ] 
