@@ -9,4 +9,4 @@ Set crontab to start script at every minute:
 * * * * * root /uhem-bin/kill_for_loginnode.sh
 ```
 
-Note: please first check user list KILLREASON lines for users which will not be killed. The current list for our Centos 7 server. For other distributions, probably you should modify the list
+Note: please first check the user list at KILLREASON lines for users which will not be killed. The current list for our Centos 7 server. For other distributions, probably you should modify the list
