@@ -5,6 +5,8 @@ You can use this script to keep loginnode is always accessible. Users can run cp
 
 Set crontab to start script at every minute:
 
+```
 * * * * * root /uhem-bin/kill_for_loginnode.sh
+```
 
 Note: please first check user list KILLREASON lines for users which will not be killed. The current list for our Centos 7 server. For other distributions, probably you should modify the list
